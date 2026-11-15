@@ -1,0 +1,27 @@
+name: zero_video_windows
+description: >-
+  Windows backend for package:video_player, built on media_kit (libmpv). Lets
+  zero_cached_video / PublicOSVideo run unchanged on Windows, where the official
+  video_player ships no implementation.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.7.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  media_kit: ^1.2.6
+  media_kit_video: ^2.0.0
+  video_player_platform_interface: ^6.2.0
+
+  # Our fork: vendored, SHA-256 pinned, no build-time download.
+  media_kit_libs_windows_video:
+    path: ../media_kit_libs_windows_video
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

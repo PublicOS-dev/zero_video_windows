@@ -1,0 +1,8 @@
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# The vendored native archives under
+# packages/media_kit_libs_windows_video/windows/binaries/ are TRACKED on purpose
+# — they are the whole point of the fork. Do not add *.7z here.

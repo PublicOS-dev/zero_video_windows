@@ -1,0 +1,30 @@
+name: media_kit_libs_windows_video
+description: >-
+  Windows native libraries (libmpv + ANGLE) for package:media_kit. Hard fork of
+  the upstream package with the binaries vendored in-repo and SHA-256 pinned, so
+  the build never reaches out to the network.
+version: 1.0.11
+publish_to: none
+
+# The package name is deliberately identical to upstream: Flutter adds Windows
+# plugin subdirectories alphabetically, and media_kit_video only finds the native
+# libraries if the package that sets MEDIA_KIT_LIBS_AVAILABLE is configured first.
+# "media_kit_libs_windows_video" < "media_kit_video". A renamed fork breaks that.
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      windows:
+        pluginClass: MediaKitLibsWindowsVideoPluginCApi
